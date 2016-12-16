@@ -3,12 +3,22 @@
 <div class="main block-center clearfix"> 
 <?php get_sidebar(); ?>
 	<div class="container"> 
-		  
-			<?php 
-				while ( have_posts() ) : the_post();
+		  <?php the_post() ?>
+<article class="fadeInDownS animated">
+	<div class="title"> 
+		<a href="<?php the_permalink(); ?>"><h1><?php the_title() ?></h1></a>
+		<div class="tag">
+			<span class="item"><i class="fa fa-fw fa-calendar-check-o"></i> <?php the_date() ?></span>
+			<span class="item"><i class="fa fa-fw fa-folder-o"></i> 
+			<?php the_category(‘,’) ?></span>
+			<span class="item"><?php comments_popup_link('暂无评论', ' 1 条评论', '% 条评论'); ?></span>
+		</div>
+	</div>
+	<div class="content">
+		<?php the_content(); ?>
+	</div> 
+</article>
 
-					get_template_part( 'template-parts/post/content', get_post_format() );
-?>
 <div class="post-nav clearfix">
 	<div class="prev"> 
 		<?php  if (get_previous_post()) { previous_post_link('<i class="fa fa-chevron-left"></i> %link');} ?>
@@ -16,10 +26,7 @@
 	<div class="next">
 		<?php if (get_next_post()) { next_post_link('%link <i class="fa fa-chevron-right"></i> ');} ?>
 	</div>  
-</div>
-<?php 
-				endwhile;  
-			?> 
+</div> 
 <div class="ds-share flat" data-thread-key="<?php the_ID() ?>" data-title="<?php the_title(); ?>"  data-url="<?php the_permalink() ?>">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-16">

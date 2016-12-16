@@ -36,9 +36,9 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		</div>
 		<div class="tab ">
 			<ul>
-				<li><a href=""><span><?php $count_posts = wp_count_posts(); echo  $count_posts->publish;?></span><span>日志</span></a></li>
-				<li><a href=""><span><?php echo wp_count_terms('category'); ?></span><span>分类</span></a></a></li>
-				<li><a href=""><span><?php echo wp_count_terms('post_tag'); ?></span><span>标签</span></a></a></li>
+				<li><a><span><?php $count_posts = wp_count_posts(); echo  $count_posts->publish;?></span><span>日志</span></a></li>
+				<li><a><span><?php echo wp_count_terms('category'); ?></span><span>分类</span></a></a></li>
+				<li><a><span><?php echo wp_count_terms('post_tag'); ?></span><span>标签</span></a></a></li>
 			</ul>
 		</div>
 		<div class="rss">
