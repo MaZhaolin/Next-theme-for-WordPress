@@ -106,14 +106,21 @@ window.onload=(function(){
     hljs.highlightBlock(block);
   }); 
 
-  toggleNav.click(function(){ 
+
+  var li = new Dom('nav li');
+      navH = li.dom.length*39+"px";
+  toggleNav.click(function(){
+      if(nav.dom[0].style.height==navH)
+        nav.dom[0].style.height=0;
+      else 
+        nav.dom[0].style.height=navH;
       nav.toggleClass('show');
   });
-  	window.onscroll=function(){
-  		if(window.scrollY>800)
-  			backTop.removeClass('hide');
-  		else backTop.addClass('hide');
-	}
+    window.onscroll=function(){
+      if(window.scrollY>800)
+        backTop.removeClass('hide');
+      else backTop.addClass('hide');
+  }
   var isScroll=false;
    backTop.click(function(){
      if(!isScroll){

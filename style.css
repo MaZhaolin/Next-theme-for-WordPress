@@ -700,8 +700,7 @@ footer a{
 		box-sizing: border-box;
 		overflow: hidden;
 	}
-	.sidebar nav.show{
-		height: 18em;
+	.sidebar nav.show{ 
 		padding: 1em 0
 	}
 
