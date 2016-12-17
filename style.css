@@ -20,7 +20,7 @@ html {
 }
 body {
   position: relative;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family:  'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 14px;
   line-height: 2;
   color: #555;
@@ -30,9 +30,11 @@ h1,h2,h3,ul,li,a,i{
 	padding: 0;
 	margin:0;
 	font-weight: normal;
-	list-style: none;
 	text-decoration: none;
 	color: #555
+}
+ul li{
+	list-style: none;
 }
 ::selection{
 	color: #fff;
@@ -378,12 +380,14 @@ article .title h1{
     font-weight: 300;
 }
 article .content{
-	font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-family: 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 16px;
 }
 article .content h2{
     font-size: 21px;
     padding-bottom: 5px;
     border-bottom: 1px solid #ccc;
+      font-family: 'Roboto Slab', 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 article .content h3,
 article .content h4,
@@ -393,6 +397,7 @@ article .content h6{
 	font-weight: bold;
     line-height: 1.5;
     font-size: 18px;
+      font-family: 'Roboto Slab', 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 article a{
 	    border-bottom: 1px solid #555;
@@ -402,8 +407,8 @@ article a{
 	padding: 0;
 }
 pre, code {
-    font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
-	font-size: 13px;
+    font-family: 'PT Mono', consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+	font-size: 16px;
 	background: #f7f7f7 ;
 }
 code{
@@ -423,7 +428,7 @@ pre:before{
 	display: inline-block;
 	text-align: right;
 	position: absolute;
-	line-height: 26px;
+	line-height: 32px;
 	left:0;
 	background: #eff2f3;
 	color: #869194;
