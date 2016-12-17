@@ -7,27 +7,16 @@ Description:Next for WordPress
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
-Text Domain: twentysixteen
+
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-*/
-
-
- 
-
-/**
- * 1.0 - Normalize
- *
- * Normalizing styles have been helped along thanks to the fine work of
- * Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
- */
+*/ 
 /*样式重置*/
 html {
-  font-family: sans-serif; 
-  -ms-text-size-adjust: 100%; 
-  -webkit-text-size-adjust: 100%;  
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 body {
   position: relative;
@@ -44,7 +33,7 @@ h1,h2,h3,ul,li,a,i{
 	list-style: none;
 	text-decoration: none;
 	color: #555
-}  
+}
 ::selection{
 	color: #fff;
 	background: #555;
@@ -179,8 +168,10 @@ header{
 	max-width:960px;
 }
 
-
-.sidebar{ 
+.container img{
+	width:95% ;
+}
+.sidebar{
 	float: left;
 	width: 240px;
 	display: inline-block;
@@ -188,7 +179,7 @@ header{
 .sidebar .title{
 	position: relative;
 	background: #222;
-	padding: 1em 0;  
+	padding: 1em 0;
 }
 .sidebar .title h1{
 	color: #fff;
@@ -204,7 +195,7 @@ header{
 	display: none;
 }
 .toggle-nav button{
-	left: 2em; 
+	left: 2em;
 	background: transparent;
 	border:none;
 	outline: none;
@@ -221,11 +212,11 @@ header{
 	padding: 1em 0;
 	background: #fff;
 }
-.sidebar nav li a{ 
+.sidebar nav li a{
 	display: block;
 	position: relative;
 	padding:.5em 1em;
-	font-size:.9em; 
+	font-size:.9em;
 	-webkit-transition:all .5s;
 	-o-transition:all .5s;
 	transition:all .5s;
@@ -258,9 +249,9 @@ header{
 	padding:2em 1em;
 	margin-top: 10px;
 	background: #fff;
-} 
+}
 .sidebar-inner .avatar{
-	width:100%; 
+	width:100%;
 }
 .sidebar-inner .avatar img{
 	width:60%;
@@ -274,10 +265,10 @@ header{
 .sidebar-inner .tab{
 	width: 100%;
 	text-align: center;
-} 
+}
 .tab li{
 	position: relative;
-	display: inline-block; 
+	display: inline-block;
 	padding: 0 1em;
 }
 .tab li + li:before{
@@ -294,10 +285,14 @@ header{
 	text-align: center;
 	display: block;
 }
+.tab li span:first-child{
+	font-size:16px;
+	font-weight:600;
+}
 .sidebar-inner .rss{
 	border-top:1px dotted #ccc;
 	border-bottom:1px dotted #ccc;
-	text-align: center; 
+	text-align: center;
 }
 .rss .fa,.rss a{
 	color:#FF8800
@@ -307,7 +302,7 @@ header{
 	border-bottom:1px dotted #ccc;
 }
 .menu-social-container li{
-	display: inline-block; 
+	display: inline-block;
 	width:48%;
 }
 .sidebar-inner  .friend-link{
@@ -317,17 +312,17 @@ header{
 	font-size: 1em;
 	font-weight: bold
 }
-.friend-link li{ 
+.friend-link li{
 	display: inline-block;
 	border-bottom: 1px solid #555
 }
 /*container*/
 .container {
 	float: right;
-	width: 700px; 
+	width: 700px;
 	padding: 3em;
 	box-sizing:border-box;
-	display: inline-block; 
+	display: inline-block;
 	background: #fff
 }
 
@@ -349,7 +344,7 @@ article{
 article .title{
 	text-align: center;
 	padding-bottom: 3em;
-  
+
 }
 .title .tag .item{
 	color: #999;
@@ -375,7 +370,7 @@ article .read-more{
 	background: #222;
 	color: #fff;
 }
-/*文章显示*/ 
+/*文章显示*/
 article .title h1{
     font-size: 26px;
     text-align: center;
@@ -385,7 +380,11 @@ article .title h1{
 article .content{
 	font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
-article .content h2,
+article .content h2{
+    font-size: 21px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
 article .content h3,
 article .content h4,
 article .content h5,
@@ -395,9 +394,8 @@ article .content h6{
     line-height: 1.5;
     font-size: 18px;
 }
-article .content img{
-    width: 740px  !important;
-    margin: 0 -100px !important;
+article a{
+	    border-bottom: 1px solid #555;
 }
 .hljs{
 	background: #f7f7f7 ;
@@ -405,36 +403,36 @@ article .content img{
 }
 pre, code {
     font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
-	font-size: 13px;  
+	font-size: 13px;
 	background: #f7f7f7 ;
 }
 code{
 	padding:2px 5px;
 	background: #F1F0F0;
 }
-pre code{ 
-	background: #f7f7f7 ; 
+pre code{
+	background: #f7f7f7 ;
 }
 pre{
 	position: relative;
 	padding-left:40px;
-	overflow-y:hidden; 
-} 
+	overflow-y:hidden;
+}
 pre:before{
 	content:"1\A 2\A 3\A 4\A 6\A 7\A 8\A 9\A 10\A 11\A 12\A 13\A 14\A 15\A 16\A 17\A 18\A 19\A 20\A 21\A 22\A 23\A 24\A 25\A 26\A 27\A 28\A 29\A 30";
 	display: inline-block;
 	text-align: right;
-	position: absolute; 
-	line-height: 26px; 
-	left:0; 
+	position: absolute;
+	line-height: 26px;
+	left:0;
 	background: #eff2f3;
 	color: #869194;
 	text-align: center;
-	width: 28px; 
+	width: 28px;
 	word-wrap: break-word;
-} 
+}
 /*page*/
-.page{ 
+.page{
 	margin-top:3em;
 	border-top: 1px solid #eee;
 	text-align: center;
@@ -504,14 +502,14 @@ pre:before{
 	display: inline-block;
 	width: 6px;
 	height: 6px;
-	left: -5px; 
+	left: -5px;
 	top:3em;
 	border-radius: 5px;
 	background: #ccc;
 	-webkit-transition: all .5s;
 	-o-transition: all .5s;
 	transition: all .5s;
-} 
+}
 .archives li .time{
 	font-size: .9em;
 	padding: 0 .5em
@@ -538,13 +536,13 @@ pre:before{
 	background: #bbb
 }
 .archives .head li:first-child{
-	font-size: 1em; 
+	font-size: 1em;
 }
 .archives .head li:first-child:before{
 	width: 10px;
 	height: 10px;
 	left: -8px;
-	background: #777; 
+	background: #777;
 }
 
 /*tags*/
@@ -553,7 +551,7 @@ pre:before{
 	min-height: 500px;
 }
 .tags a{
-	display: inline-block; 
+	display: inline-block;
 	padding:2px 0;
 	margin:0 10px;
 	color: #bbb;
@@ -569,7 +567,7 @@ pre:before{
 	border-top: 1px solid #ddd
 }
 .post-nav .fa{
-	font-size: .8em; 
+	font-size: .8em;
 }
 .post-nav .prev{
 	float:left;
@@ -621,7 +619,7 @@ footer a{
     -o-transition: all .3s;
     transition: all .3s;
     outline: none;
-} 
+}
 .container #ds-thread #ds-reset a.ds-like-thread-button:hover span{
 	color: #fff;
 }
@@ -682,7 +680,7 @@ footer a{
 .container #ds-reset div, #ds-related-reads div, #ds-reset ul, #ds-related-reads ul, #ds-reset ol, #ds-related-reads ol, #ds-reset li, #ds-related-reads li, #ds-reset ul li, #ds-related-reads ul li, #ds-reset ol li, #ds-related-reads ol li, #ds-reset iframe, #ds-related-reads iframe, #ds-reset h1, #ds-related-reads h1, #ds-reset h2, #ds-related-reads h2, #ds-reset h3, #ds-related-reads h3, #ds-reset h4, #ds-related-reads h4, #ds-reset h5, #ds-related-reads h5, #ds-reset h6, #ds-related-reads h6, #ds-reset p, #ds-related-reads p, #ds-reset img, #ds-related-reads img, #ds-reset blockquote, #ds-related-reads blockquote, #ds-reset a, #ds-related-reads a, #ds-reset span, #ds-related-reads span, #ds-reset pre, #ds-related-reads pre, #ds-reset code, #ds-related-reads code, #ds-reset strong, #ds-related-reads strong, #ds-reset sub, #ds-related-reads sub, #ds-reset sup, #ds-related-reads sup, #ds-reset fieldset, #ds-related-reads fieldset, #ds-reset form, #ds-related-reads form, #ds-reset label, #ds-related-reads label, #ds-reset input, #ds-related-reads input, #ds-reset textarea, #ds-related-reads textarea, #ds-reset header, #ds-related-reads header, #ds-reset section, #ds-related-reads section, #ds-reset article, #ds-related-reads article, #ds-reset select, #ds-related-reads select{
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: 300
-} 
+}
 @media (max-width: 991px){
 	.toggle-nav {
 		display: block
@@ -693,19 +691,18 @@ footer a{
 	.sidebar-inner{
 		display: none;
 	}
-	.sidebar nav{ 
+	.sidebar nav{
 		transition: all .3s ease-out;
 		height: 0;
 		padding: 0;
 		box-sizing: border-box;
 		overflow: hidden;
 	}
-	.sidebar nav.show{ 
+	.sidebar nav.show{
 		padding: 1em 0
 	}
 
 	.container{
 		width: 100%;
 	}
-} 
-
+}
