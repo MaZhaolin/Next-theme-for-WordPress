@@ -11,7 +11,8 @@
 			<span class="item"><i class="fa fa-fw fa-calendar-check-o"></i> <?php the_date() ?></span>
 			<span class="item"><i class="fa fa-fw fa-folder-o"></i> 
 			<?php the_category(‘,’) ?></span>
-			<span class="item"><?php comments_popup_link('暂无评论', ' 1 条评论', '% 条评论'); ?></span>
+			<span class="item ds-thread-count" data-thread-key="<?php the_id() ?>"></span>
+			<span class="item">阅读次数 <?php get_post_views($post -> ID); ?></span>
 		</div>
 	</div>
 	<div class="content">

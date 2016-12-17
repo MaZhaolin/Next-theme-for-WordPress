@@ -11,7 +11,8 @@
 				<div class="tag">
 					<span class="item">发表于 <?php the_date() ?></span>
 					<span class="item"><?php the_category(‘,’) ?></span>
-					<span class="item"><?php comments_popup_link('暂无评论', ' 1 条评论', '% 条评论'); ?></span>
+					<span class="item ds-thread-count" data-thread-key="<?php the_id() ?>"></span>
+					<span class="item">阅读次数 <?php get_post_views($post -> ID); ?></span>
 				</div>
 			</div>
 			<div class="content">
@@ -33,4 +34,14 @@
 <div id="backTop" class="hide">
 	<i class="fa fa-arrow-up"></i>
 </div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"insertsweat"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
 <?php get_footer() ?>
