@@ -397,7 +397,7 @@ article .content h6{
 	font-weight: bold;
     line-height: 1.5;
     font-size: 18px;
-      font-family: 'Roboto Slab', 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-family: 'Roboto Slab', 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 article a{
 	    border-bottom: 1px solid #555;
@@ -601,9 +601,16 @@ pre:before{
 }
 /*footer*/
 footer{
-	padding:20px 0;
-	text-align: center;
+	max-width: 700px;
+    padding-left: 260px;
+    padding-bottom: 20px;
+    padding-top: 50px;
+    text-align: center;
+    margin: 0 auto;
 	color: #999;
+}
+footer .fa{
+	color: #999
 }
 footer a{
 	color: #555;

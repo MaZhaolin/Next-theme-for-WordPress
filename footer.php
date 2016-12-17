@@ -1,9 +1,9 @@
 <footer>
 	<div>
-		© 2016  Mr.Lin
+		© 2016 <i class="fa fa-heart"></i> Mr.Lin
 	</div>
 	<div class="copy">
-		Powerd By <a href="">InsertSweat</a>
+		Powerd By WordPress  | Theme By <a target="_blank" href="https://github.com/insertSweat/Next-theme-for-WordPress">NexT - InsertSweat</a>
 	</div>	
 </footer>    
 <!--[if IE]>
