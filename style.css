@@ -1,3 +1,28 @@
+/*
+Theme Name: Next
+Theme URI: http://blog.cquccc.top
+Author: insertSweat
+Author URI: http://blog.cquccc.top
+Description:Next for WordPress
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
+Text Domain: twentysixteen
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+ 
+
+/**
+ * 1.0 - Normalize
+ *
+ * Normalizing styles have been helped along thanks to the fine work of
+ * Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+ */
 /*样式重置*/
 html {
   font-family: sans-serif; 
@@ -48,7 +73,13 @@ h1,h2,h3,ul,li,a,i{
 .clearfix:after{
 	clear: both;
 }
-
+hr{
+	margin: 40px 0;
+    height: 3px;
+    border: none;
+    background-color: #ddd;
+    background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
+}
 /*头部*/
 
 header{
@@ -303,7 +334,7 @@ header{
 /*article*/
 
 article{
-	padding: 3em;
+	padding: 3em 0;
 
   -webkit-animation-name: fadeInDownS;
   animation-name: fadeInDownS;
@@ -362,7 +393,11 @@ article .content h6{
 	padding-top: 10px;
 	font-weight: bold;
     line-height: 1.5;
-    font-size: 18px
+    font-size: 18px;
+}
+article .content img{
+    width: 740px  !important;
+    margin: 0 -100px !important;
 }
 .hljs{
 	background: #f7f7f7 ;
@@ -384,15 +419,14 @@ pre{
 	position: relative;
 	padding-left:40px;
 	overflow-y:hidden; 
-}
+} 
 pre:before{
-	content:"  1  2  3  4  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30";
+	content:"1\A 2\A 3\A 4\A 6\A 7\A 8\A 9\A 10\A 11\A 12\A 13\A 14\A 15\A 16\A 17\A 18\A 19\A 20\A 21\A 22\A 23\A 24\A 25\A 26\A 27\A 28\A 29\A 30";
 	display: inline-block;
-	text-align: center;
+	text-align: right;
 	position: absolute; 
-	line-height: 26px;
-	padding-right: 6px;
-	left:0;
+	line-height: 26px; 
+	left:0; 
 	background: #eff2f3;
 	color: #869194;
 	text-align: center;

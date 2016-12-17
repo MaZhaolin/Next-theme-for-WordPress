@@ -15,7 +15,7 @@
 				</div>
 			</div>
 			<div class="content">
-				<?php echo mb_strimwidth(apply_filters('the_content', $post->post_content), 0, 300,"……"); ?>
+				<?php the_content(''); ?>
 			</div>
 			<div class="read-more">
 				<a href="<?php the_permalink(); ?>">阅读全文 »</a>
