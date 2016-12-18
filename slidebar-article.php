@@ -77,7 +77,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		</div>
 	</div>
 	<nav> 
-	<?php echo wp_nav_menu(['menu'=>'menu']); ?> 
+	<?php echo wp_nav_menu(array('menu'=>'menu')); ?> 
 	</nav>
 
 	<div class="sidebar-inner ">
@@ -101,11 +101,11 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			<a href="<?php bloginfo('rss2_url'); ?> :"><i class="fa fa-fw fa-rss"></i>RSS</a>
 		</div>
 		<?php  ?>
-		<?php if(wp_get_nav_menu_items('social')) : echo wp_nav_menu(['menu'=>'social']); endif;?>  
+		<?php if(wp_get_nav_menu_items('social')) : echo wp_nav_menu(array('menu'=>'social')); endif;?>  
 		<?php if(wp_get_nav_menu_items('friendlink')) :?>
 		<div class="friend-link">
 			<h2><i class="fa fa-fw fa-globe"></i>友链</h2>
-					 <?php echo wp_nav_menu(['menu'=>'friendlink']); ?>  
+					 <?php echo wp_nav_menu(array('menu'=>'friendlink')); ?>  
 		</div>
 	<?php endif; ?>
 		</div>

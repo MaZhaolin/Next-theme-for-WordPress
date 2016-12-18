@@ -181,19 +181,19 @@ header{
 .sidebar .title{
 	position: relative;
 	background: #222;
+	text-align: center;
 	padding: 1em 0;
 }
 .sidebar .title h1{
+	display: inline-block;
 	color: #fff;
-	text-align: center;
 	font-size: 1.5em
 }
 .toggle-nav {
 	position: absolute;
 	top: 0;
 	left: 2em;
-	height:73px;
-	line-height: 73px;
+	padding: 23px 0;
 	display: none;
 }
 .toggle-nav button{
@@ -724,5 +724,12 @@ footer a{
 
 	.container{
 		width: 100%;
+	}
+	#backTop{
+		right: 20px;
+	}
+	footer{
+		width: 100%;
+		padding:30px 0;
 	}
 }
