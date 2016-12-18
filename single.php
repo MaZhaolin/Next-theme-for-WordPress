@@ -1,10 +1,10 @@
  
 <?php get_header() ?>
 <div class="main block-center clearfix"> 
-<?php get_sidebar(); ?>
+<?php get_template_part( 'slidebar-article'); ?>
 	<div class="container"> 
 		  <?php the_post() ?>
-<article class="fadeInDownS animated">
+<article  class="fadeInDownS animated">
 	<div class="title"> 
 		<a href="<?php the_permalink(); ?>"><h1><?php the_title() ?></h1></a>
 		<div class="tag">

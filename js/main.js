@@ -1,6 +1,6 @@
 function Dom(el){
      this.dom = document.querySelectorAll(el);
-  }
+}
   Dom.prototype = {
     constructor : Dom,
     map : function(cb){
@@ -66,14 +66,90 @@ function Dom(el){
     }
   }
 
+
+function $(el){
+  return document.querySelectorAll(el);
+}
+addClass = function(v,className){ 
+    var classNames = v.className.split(' ');
+        index = classNames.indexOf(className);
+    if(index < 0)
+      classNames.push(className);
+    v.className=classNames.join(' '); 
+}
+
+removeClass = function(v,className){ 
+    var classNames = v.className.split(' ');
+        index = classNames.indexOf(className);
+    if(index >= 0)
+      classNames.splice(index,1);
+    v.className=classNames.join(' '); 
+}
+
+
+ function style(element,attr) { 
+  if(typeof window.getComputedStyle!='undefined'){ 
+          //如果支持W3C，使用getComputedStyle来获取样式 
+          return  parseInt(window.getComputedStyle(element,null)[attr]);            
+      }else if(element.currentStyle){ 
+        return  parseInt(element.currentStyle[attr]);       
+      }
+ }
 window.onload=(function(){
+
+
 
   var backTop = new Dom('#backTop');
   var toggleNav = new Dom('.toggle-nav');
   var nav = new Dom('nav'); 
-  var code=new Dom('pre code');
-  var tags=new Dom('.tags a');
+  var code = new Dom('pre code');
+  var tags = new Dom('.tags a');
+  var dirs = new Dom('article h3'); 
+  var dirPanel = $('.sidebar-inner .post-dir')[0];
+  var infoPanel = $('.sidebar-inner .info')[0];
+  var tab = new Dom('.sidebar-inner .tabs a');
+   function addElementA(v) { 
+  　　　　var a = document.createElement("a"); 
+  　　　　a.setAttribute("href","#"+v); 
+  　　　　a.innerHTML = i+". "+v;
+        i++; 
+        return a;
+  　}
+ 
+  if(dirPanel!=null){
+     var i=1;
+    dirs.map(function(e){
+      e.id=e.innerHTML;
+      dirPanel.appendChild(addElementA(e.innerHTML));
+    });
 
+    var dirA=$('.sidebar-inner .post-dir a');
+
+    [].map.call(dirA,function(e){
+      e.onclick = function(){
+        [].map.call(dirA,function(e1){ 
+          removeClass(e1,'active');
+        })
+        addClass(e,'active'); 
+      }
+    })
+
+    tab.dom[0].onclick = function(){ 
+      if(style(dirPanel,'opacity') == 0)
+        tab.toggleClass('active');
+      dirPanel.style.opacity = 1;  
+      infoPanel.style.opacity = 0;
+    }
+    tab.dom[1].onclick = function(){
+      if(style(dirPanel,'opacity') == 1)
+        tab.toggleClass('active');
+      dirPanel.style.opacity = 0; 
+      infoPanel.style.opacity = 1; 
+    }
+  }
+ 
+
+  
   tags.map(function(e){
     var fontSize=parseInt(e.style.fontSize);
     if(fontSize>10)
@@ -108,7 +184,7 @@ window.onload=(function(){
 
 
   var li = new Dom('nav li');
-      navH = li.dom.length*39+"px";
+      navH = li.dom.length*39+"px"; 
   toggleNav.click(function(){
       if(nav.dom[0].style.height==navH)
         nav.dom[0].style.height=0;
@@ -120,6 +196,24 @@ window.onload=(function(){
       if(window.scrollY>800)
         backTop.removeClass('hide');
       else backTop.addClass('hide');
+
+      if(dirPanel!=null){
+        if(window.scrollY>(parseInt(navH)+70)){
+          $('.sidebar-inner')[0].style.cssText="position:fixed;top:0";
+        }else{
+          $('.sidebar-inner')[0].style.cssText="";
+        }
+         dirs.map(function(e,i){
+          if(window.scrollY>e.offsetTop){
+            [].map.call(dirA,function(e){ 
+              removeClass(e,'active');
+            }) 
+            addClass(dirA[i],'active'); 
+          }
+        })
+      }
+
+     
   }
   var isScroll=false;
    backTop.click(function(){

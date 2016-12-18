@@ -14,6 +14,57 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 ?> 
+<style type="text/css" media="screen">
+	.sidebar-inner{
+		position: relative; 
+		width: 240px; 
+		background: transparent; 
+		padding: 0;
+	}
+	.sidebar-inner .info{
+		background: #fff;
+		opacity: 0;
+		-webkit-transition: all .3s;
+		-o-transition: all .3s;
+		transition: all .3s;
+		padding: 20px;
+	}
+	.sidebar-inner .tabs{ 
+		text-align: center;
+		padding: 20px;
+		background: #fff;
+	}
+	.sidebar-inner .tabs a{
+		display: inline-block; 
+		padding: 2px;
+	}
+	.sidebar-inner .tabs a.active{
+		color: #fc6423;
+		border-bottom: 1px solid #fc6423
+	}
+	.sidebar-inner .post-dir{
+		position: absolute;
+		top:70px;
+		padding: 1em;
+		box-sizing: border-box;
+		width: 240px;
+		background: #fff;
+		opacity: 1;
+		-webkit-transition: all .3s;
+		-o-transition: all .3s;
+		transition: all .3s;
+	}
+	.sidebar-inner .post-dir a{
+		display:block; 
+	} 
+	.sidebar-inner .post-dir a.active{
+		color: #fc6423;
+
+	}
+	.sidebar-inner .post-dir a:hover{
+		text-decoration:underline 
+	}
+</style>
 <div class="sidebar">
 	<div class="title">
 		<a href="<?php bloginfo('url'); ?>"><h1 class="fadeInDown animated"><?php bloginfo('name'); ?></h1></a>
@@ -30,7 +81,12 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	</nav>
 
 	<div class="sidebar-inner ">
-		<div class="avatar text-center">
+		<div class="tabs">
+			<a class="active" href="javascript:;">文章目录</a>
+			<a href="javascript:;">站点概览</a>
+		</div>
+		<div class="info">
+			<div class="avatar text-center">
 			<img src="<?php bloginfo('template_url'); ?>/images/avatar.jpeg" alt="">
 			<h2 class="author"><?php  bloginfo('description'); ?></h2>
 		</div>
@@ -52,7 +108,14 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 					 <?php echo wp_nav_menu(['menu'=>'friendlink']); ?>  
 		</div>
 	<?php endif; ?>
+		</div>
+		
+		<div class="post-dir">
+			
+		</div>
 	</div>
+
+	
 </div>
 
 
