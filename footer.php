@@ -1,6 +1,6 @@
 <footer>
 	<div>
-		© 2016 <i class="fa fa-heart"></i> Mr.Lin
+		© 2016 <i class="fa fa-heart"></i> <?php  bloginfo('description'); ?>
 	</div>
 	<div class="copy">
 		Powerd By WordPress  | Theme By <a target="_blank" href="https://github.com/insertSweat/Next-theme-for-WordPress">NexT - InsertSweat</a>

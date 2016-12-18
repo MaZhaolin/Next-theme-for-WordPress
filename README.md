@@ -1,12 +1,12 @@
  ![Next](http://www.cquccc.top/wp-content/uploads/2016/12/Next.png)
 ## Next for WordPres 前言 
-`Next for WordPress` 是根据[hexo-theme-next](https://github.com/iissnan/hexo-theme-next) 制作的，作者博客：[IIssNan](http://notes.iissnan.com/)。
+`Next for WordPresss` 是根据[hexo-theme-next](https://github.com/iissnan/hexo-theme-next) 制作的，作者博客：[IIssNan](http://notes.iissnan.com/)。
 
 本博客之前用`hexo`托管于`Github` 之上，用的Next主题 ，后因为hexo实在有些麻烦所以转到了WordPress上(原博地址：[insertSweat.github.io](http://insertSweat.github.io))。
 
 我非常喜欢`Next`这款主题，所以开发了`Next for WordPress`主题。再此感谢[IIssNan](http://notes.iissnan.com/)。
 <!--more-->
-## 关于Next for WordPres 
+## 关于Next for WordPress 
 ### 代码高亮
 代码高亮方案 采用highlightjs 官网地址 [https://highlightjs.org/](https://highlightjs.org/)
 ### 评论系统
@@ -29,12 +29,20 @@
 动画啊什么之类的全部用的`CSS3`和原生`JavaScript`，因为感觉没有多少东西。
 
 字体：`google fonts `  样式重置: `normalize.css`。
-
+### 文章目录说明 16-12-08更新
+暂时只支持三级标题生成目录，用js实现的，暂时还么想到什么完美的解决方案 ，如果你想到了什么好的解决方案请给我留言
 ### 主题完全开源
 这有点废话哈 ，肯定必须是开源的, `Github`地址[https://github.com/insertSweat/Next-theme-for-WordPress](https://github.com/insertSweat/Next-theme-for-WordPress)。
 ## Next 主题记录
 1. 2016年12月17日  Next 1.0 发布
-
+		 - 修复文章图片显示问题
+		 - 将评论统计改为多说
+		 - 增加阅读次数显示
+		 - 优化部分细节
+2. 12月18日  更新  Next 1.1
+		- 底部版权信息更新
+		- 增加文章目录
+		- 字体大小样式更新
 ----
 ### 写在最后
 主题现在有很多不完善的地方，空有个样子。

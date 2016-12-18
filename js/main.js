@@ -198,7 +198,7 @@ window.onload=(function(){
       else backTop.addClass('hide');
 
       if(dirPanel!=null){
-        if(window.scrollY>(parseInt(navH)+70)){
+        if(window.scrollY>$('.sidebar-inner')[0].offsetTop){
           $('.sidebar-inner')[0].style.cssText="position:fixed;top:0";
         }else{
           $('.sidebar-inner')[0].style.cssText="";
