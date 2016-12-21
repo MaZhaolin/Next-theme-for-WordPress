@@ -24,7 +24,7 @@ body {
   font-size: 14px;
   line-height: 2;
   color: #555;
-  background: #F5F7F9
+  background: #F5F7F9;
 }
 h1,h2,h3,ul,li,a,i{
 	padding: 0;
@@ -238,19 +238,19 @@ header{
 .sidebar nav li a .fa{
 	width: 2em
 }
-.sidebar nav li a:hover,.sidebar nav .active{
+.sidebar nav li a:hover,.sidebar nav .current_page_item{
 	background: #F3F3F3
 }
-.sidebar nav .active:after{
+.sidebar nav .current_page_item a:after{
 	content:"";
 	display: block;
 	position: absolute;
 	right: 1em;
 	top:16px;
-	width: 5px;
-	height: 5px;
+	width: 6px;
+	height: 6px;
 	border-radius:50%;
-	background:#999;
+	background:#ABABAB;
 }
 
 .sidebar-inner{
@@ -379,21 +379,52 @@ article .read-more{
 	color: #fff;
 }
 /*文章显示*/
-article .title h1{
+article .title_link{
+	border-bottom: none;
+}
+article .title h1{ 
     font-size: 26px;
     text-align: center;
     word-break: break-word;
-    font-weight: 300;
+    display: inline-block;
+}
+article .title h1:after{
+	content: "";
+	display: block;
+	height: 2px;
+	background: #555;
+	margin-top: -5px;
+	margin-bottom:10px;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	-o-transform: scale(0);
+	transform: scale(0);
+    -webkit-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s; 
+}
+article .title h1:hover:after{
+	opacity: 1;
+	visibility:inherit;
+	-webkit-transform: scale(1);
+	   -moz-transform: scale(1);
+	    -ms-transform: scale(1);
+	     -o-transform: scale(1);
+	        transform: scale(1);
 }
 article .content{
 	font-family: 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
 	font-size: 16px;
+  	word-break: break-all;
 }
 article .content h2{
     font-size: 21px;
     padding-bottom: 5px;
     border-bottom: 1px solid #ccc;
-      font-family: 'Roboto Slab', 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-family: 'Roboto Slab', 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 article .content h3,
 article .content h4,

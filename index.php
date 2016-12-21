@@ -7,7 +7,7 @@
 	<?php while(have_posts()) : the_post(); ?>
 		<article>
 			<div class="title"> 
-				<a href="<?php the_permalink(); ?>"><h1><?php the_title() ?></h1></a>
+				<a class="title_link" href="<?php the_permalink(); ?>"><h1><?php the_title() ?></h1></a>
 				<div class="tag">
 					<span class="item">发表于 <?php the_date() ?></span>
 					<span class="item"><?php the_category(‘,’) ?></span>

@@ -6,7 +6,7 @@
 		  <?php the_post() ?>
 <article  class="fadeInDownS animated">
 	<div class="title"> 
-		<a href="<?php the_permalink(); ?>"><h1><?php the_title() ?></h1></a>
+		<a class="title_link" href="<?php the_permalink(); ?>"><h1><?php the_title() ?></h1></a>
 		<div class="tag">
 			<span class="item"><i class="fa fa-fw fa-calendar-check-o"></i> <?php the_date() ?></span>
 			<span class="item"><i class="fa fa-fw fa-folder-o"></i> 
