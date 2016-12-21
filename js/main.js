@@ -1,11 +1,18 @@
-function Dom(el){
-     this.dom = document.querySelectorAll(el);
+var 
+$ = function(el){
+  return new $.fn.init(el);
 }
-  Dom.prototype = {
-    constructor : Dom,
-    map : function(cb){
-      [].map.call(this.dom,cb);
-    },
+
+$.fn=$.prototype = {
+    constructor :$,
+    __proto__ : [],
+    init : function(el){
+      var elements=document.querySelectorAll(el);
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].prototype=$.fn;
+        this.push(elements[i]);
+      }
+    }, 
     click : function(cb){
         this.map(function(v){
           v.onclick = cb;
@@ -66,10 +73,8 @@ function Dom(el){
     }
   }
 
+$.fn.init.prototype=$.fn;
 
-function $(el){
-  return document.querySelectorAll(el);
-}
 addClass = function(v,className){ 
     var classNames = v.className.split(' ');
         index = classNames.indexOf(className);
@@ -99,15 +104,15 @@ window.onload=(function(){
 
 
 
-  var backTop = new Dom('#backTop');
-  var toggleNav = new Dom('.toggle-nav');
-  var nav = new Dom('nav'); 
-  var code = new Dom('pre code');
-  var tags = new Dom('.tags a');
-  var dirs = new Dom('article h3'); 
+  var backTop = $('#backTop');
+  var toggleNav = $('.toggle-nav');
+  var nav = $('nav'); 
+  var code = $('pre code');
+  var tags = $('.tags a');
+  var dirs = $('article h3'); 
   var dirPanel = $('.sidebar-inner .post-dir')[0];
   var infoPanel = $('.sidebar-inner .info')[0];
-  var tab = new Dom('.sidebar-inner .tabs a');
+  var tab = $('.sidebar-inner .tabs a');
    function addElementA(v) { 
   　　　　var a = document.createElement("a"); 
   　　　　a.setAttribute("href","#"+v); 
@@ -125,22 +130,22 @@ window.onload=(function(){
 
     var dirA=$('.sidebar-inner .post-dir a');
 
-    [].map.call(dirA,function(e){
+    dirA.map(function(e){
       e.onclick = function(){
-        [].map.call(dirA,function(e1){ 
+        dirA.map(function(e1){ 
           removeClass(e1,'active');
         })
         addClass(e,'active'); 
       }
     })
 
-    tab.dom[0].onclick = function(){ 
+    tab[0].onclick = function(){ 
       if(style(dirPanel,'opacity') == 0)
         tab.toggleClass('active');
       dirPanel.style.opacity = 1;  
       infoPanel.style.opacity = 0;
     }
-    tab.dom[1].onclick = function(){
+    tab[1].onclick = function(){
       if(style(dirPanel,'opacity') == 1)
         tab.toggleClass('active');
       dirPanel.style.opacity = 0; 
@@ -183,13 +188,13 @@ window.onload=(function(){
   }); 
 
 
-  var li = new Dom('nav li');
-      navH = li.dom.length*39+"px"; 
+  var li = $('nav li');
+      navH = li.length*39+"px"; 
   toggleNav.click(function(){
-      if(nav.dom[0].style.height==navH)
-        nav.dom[0].style.height=0;
+      if(nav[0].style.height==navH)
+        nav[0].style.height=0;
       else 
-        nav.dom[0].style.height=navH;
+        nav[0].style.height=navH;
       nav.toggleClass('show');
   });
     window.onscroll=function(){
@@ -205,7 +210,7 @@ window.onload=(function(){
         }
          dirs.map(function(e,i){
           if(window.scrollY>e.offsetTop){
-            [].map.call(dirA,function(e){ 
+            dirA.map(function(e){ 
               removeClass(e,'active');
             }) 
             addClass(dirA[i],'active'); 
