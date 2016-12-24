@@ -1,12 +1,12 @@
- 
+
 <?php get_header() ?>
-<div class="main block-center clearfix"> 
+<div class="main block-center clearfix">
 <?php get_sidebar(); ?>
 	<div class="container">
 	<?php if(have_posts()) : ?>
 	<?php while(have_posts()) : the_post(); ?>
 		<article>
-			<div class="title"> 
+			<div class="title">
 				<a class="title_link" href="<?php the_permalink(); ?>"><h1><?php the_title() ?></h1></a>
 				<div class="tag">
 					<span class="item">发表于 <?php the_date() ?></span>
@@ -23,11 +23,11 @@
 			</div>
 		</article>
 
-	<?php endwhile; ?> 
-	<div class="page">
+	<?php endwhile; ?>
+	<div class="pagination">
 		<?php  wpdx_paging_nav(); ?>
-	</div>  
-	<?php endif; ?>  
+	</div>
+	<?php endif; ?>
 	</div>
 </div>
 </div>
@@ -35,7 +35,7 @@
 	<i class="fa fa-arrow-up"></i>
 </div>
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"insertsweat"};
+var duoshuoQuery = {short_name:"<?php echo get_option('next_duoshuo_shortname'); ?>"};
 (function() {
     var ds = document.createElement('script');
     ds.type = 'text/javascript';ds.async = true;

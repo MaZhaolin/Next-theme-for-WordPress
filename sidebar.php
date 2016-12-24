@@ -1,19 +1,3 @@
-<?php
-/**
- * The sidebar containing the main widget area
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
- */
-
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
-?> 
 <div class="sidebar">
 	<div class="title">
 		<a href="<?php bloginfo('url'); ?>"><h1 class="fadeInDown animated"><?php bloginfo('name'); ?></h1></a>
@@ -25,14 +9,14 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			</button>
 		</div>
 	</div>
-	<nav> 
-	<?php echo wp_nav_menu(array('menu'=>'menu')); ?> 
+	<nav>
+	<?php wp_nav_menu(array('theme_location' => 'primary')); ?>
 	</nav>
 
 	<div class="sidebar-inner ">
 		<div class="avatar text-center">
-			<img src="<?php bloginfo('template_url'); ?>/images/avatar.jpeg" alt="">
-			<h2 class="author"><?php  bloginfo('description'); ?></h2>
+			<img src="<?php echo get_option('next_avator'); ?>" alt="">
+			<h2 class="author"><?php echo get_option('next_author'); ?></h2>
 		</div>
 		<div class="tab ">
 			<ul>
@@ -45,14 +29,12 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			<a href="<?php bloginfo('rss2_url'); ?> :"><i class="fa fa-fw fa-rss"></i>RSS</a>
 		</div>
 		<?php  ?>
-		<?php if(wp_get_nav_menu_items('social')) : echo wp_nav_menu(array('menu'=>'social')); endif;?>  
+		<?php wp_nav_menu(array('theme_location' => 'social')); ?>
 		<?php if(wp_get_nav_menu_items('friendlink')) :?>
 		<div class="friend-link">
 			<h2><i class="fa fa-fw fa-globe"></i>友链</h2>
-					 <?php echo wp_nav_menu(array('menu'=>'friendlink')); ?>  
+					 <?php wp_nav_menu(array('theme_location' => 'friendlink')); ?>
 		</div>
 	<?php endif; ?>
 	</div>
 </div>
-
-

@@ -1,4 +1,4 @@
- ![Next](http://www.cquccc.top/wp-content/uploads/2016/12/Next.png)
+ ![Next](screenshot.png)
 ## Next for WordPres 前言 
 `Next for WordPresss` 是根据[hexo-theme-next](https://github.com/iissnan/hexo-theme-next) 制作的，作者博客：[IIssNan](http://notes.iissnan.com/)。
 

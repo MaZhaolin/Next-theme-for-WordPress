@@ -4,14 +4,14 @@ Theme URI: http://blog.cquccc.top
 Author: insertSweat
 Author URI: http://blog.cquccc.top
 Description:Next for WordPress
-Version: 1.1
+Version: 2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-*/ 
+*/
 /*样式重置*/
 html {
   font-family: sans-serif;
@@ -238,10 +238,10 @@ header{
 .sidebar nav li a .fa{
 	width: 2em
 }
-.sidebar nav li a:hover,.sidebar nav .current_page_item{
+.sidebar nav li a:hover,.sidebar nav .current_pagination_item{
 	background: #F3F3F3
 }
-.sidebar nav .current_page_item a:after{
+.sidebar nav .current_pagination_item a:after{
 	content:"";
 	display: block;
 	position: absolute;
@@ -382,7 +382,7 @@ article .read-more{
 article .title_link{
 	border-bottom: none;
 }
-article .title h1{ 
+article .title h1{
     font-size: 26px;
     text-align: center;
     word-break: break-word;
@@ -404,7 +404,7 @@ article .title h1:after{
 	transform: scale(0);
     -webkit-transition: all 0.3s ease-out 0s;
     -o-transition: all 0.3s ease-out 0s;
-    transition: all 0.3s ease-out 0s; 
+    transition: all 0.3s ease-out 0s;
 }
 article .title h1:hover:after{
 	opacity: 1;
@@ -442,7 +442,7 @@ article a{
 .hljs{
 	background: #f7f7f7 ;
 	padding: 0;
-	overflow-x: initial; 
+	overflow-x: initial;
 }
 pre, code {
     font-family: 'PT Mono', consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
@@ -475,22 +475,22 @@ pre:before{
 	width: 28px;
 	word-wrap: break-word;
 }
-/*page*/
-.page{
+/*pagination*/
+.pagination{
 	margin-top:3em;
 	border-top: 1px solid #eee;
 	text-align: center;
 }
-.page li{
+.pagination li{
 	display: inline-block;
 	padding: 0 .5em;
 }
-.page a,.page span{
+.pagination a,.pagination span{
 	position: relative;
 	display: inline-block;
 	padding: .2em .8em;
 }
-.page a:before{
+.pagination a:before{
 	content: "";
 	width: 100%;
 	height: 1px;
@@ -502,7 +502,7 @@ pre:before{
 	opacity: 0;
 	transition: all .5s
 }
-.page a:hover:before{
+.pagination a:hover:before{
 	content: "";
 	width: 100%;
 	height: 1px;
@@ -513,12 +513,12 @@ pre:before{
 	left: 0;
 	opacity: 1
 }
-.page span.current{
+.pagination span.current{
 	background: #ccc;
 	color: #fff
 }
-.page span.current:before,
-.page span.current:hover:before{
+.pagination span.current:before,
+.pagination span.current:hover:before{
 	visibility: hidden;
 }
 
