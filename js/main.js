@@ -1,4 +1,4 @@
-var 
+var
 $ = function(el){
   return new $.fn.init(el);
 }
@@ -12,7 +12,7 @@ $.fn=$.prototype = {
         elements[i].prototype=$.fn;
         this.push(elements[i]);
       }
-    }, 
+    },
     click : function(cb){
         this.map(function(v){
           v.onclick = cb;
@@ -75,86 +75,61 @@ $.fn=$.prototype = {
 
 $.fn.init.prototype=$.fn;
 
-addClass = function(v,className){ 
+addClass = function(v,className){
     var classNames = v.className.split(' ');
         index = classNames.indexOf(className);
     if(index < 0)
       classNames.push(className);
-    v.className=classNames.join(' '); 
+    v.className=classNames.join(' ');
 }
 
-removeClass = function(v,className){ 
+removeClass = function(v,className){
     var classNames = v.className.split(' ');
         index = classNames.indexOf(className);
     if(index >= 0)
       classNames.splice(index,1);
-    v.className=classNames.join(' '); 
+    v.className=classNames.join(' ');
 }
 
 
- function style(element,attr) { 
-  if(typeof window.getComputedStyle!='undefined'){ 
-          //如果支持W3C，使用getComputedStyle来获取样式 
-          return  parseInt(window.getComputedStyle(element,null)[attr]);            
-      }else if(element.currentStyle){ 
-        return  parseInt(element.currentStyle[attr]);       
+ function style(element,attr) {
+  if(typeof window.getComputedStyle!='undefined'){
+          //如果支持W3C，使用getComputedStyle来获取样式
+          return  parseInt(window.getComputedStyle(element,null)[attr]);
+      }else if(element.currentStyle){
+        return  parseInt(element.currentStyle[attr]);
       }
  }
 window.onload=(function(){
 
-
-
   var backTop = $('#backTop');
   var toggleNav = $('.toggle-nav');
-  var nav = $('nav'); 
+  var nav = $('nav');
   var code = $('pre code');
   var tags = $('.tags a');
-  var dirs = $('article h3'); 
+  var dirs = $('article h3');
   var dirPanel = $('.sidebar-inner .post-dir')[0];
   var infoPanel = $('.sidebar-inner .info')[0];
   var tab = $('.sidebar-inner .tabs a');
-   function addElementA(v) { 
-  　　　　var a = document.createElement("a"); 
-  　　　　a.setAttribute("href","#"+v); 
-  　　　　a.innerHTML = i+". "+v;
-        i++; 
-        return a;
-  　}
- 
+
   if(dirPanel!=null){
-     var i=1;
-    dirs.map(function(e){
-      e.id=e.innerHTML;
-      dirPanel.appendChild(addElementA(e.innerHTML));
-    });
 
-    var dirA=$('.sidebar-inner .post-dir a');
-
-    dirA.map(function(e){
-      e.onclick = function(){
-        dirA.map(function(e1){ 
-          removeClass(e1,'active');
-        })
-        addClass(e,'active'); 
-      }
-    })
-
-    tab[0].onclick = function(){ 
+    tab[0].onclick = function(){
       if(style(dirPanel,'opacity') == 0)
         tab.toggleClass('active');
-      dirPanel.style.opacity = 1;  
+      dirPanel.style.opacity = 1;
       infoPanel.style.opacity = 0;
     }
     tab[1].onclick = function(){
       if(style(dirPanel,'opacity') == 1)
         tab.toggleClass('active');
-      dirPanel.style.opacity = 0; 
-      infoPanel.style.opacity = 1; 
+      dirPanel.style.opacity = 0;
+      infoPanel.style.opacity = 1;
     }
   }
- 
 
-  
+
+
   tags.map(function(e){
     var fontSize=parseInt(e.style.fontSize);
     if(fontSize>10)
@@ -185,15 +160,15 @@ window.onload=(function(){
 
   code.map(function( block,i) {
     hljs.highlightBlock(block);
-  }); 
+  });
 
 
   var li = $('nav li');
-      navH = li.length*39+"px"; 
+      navH = li.length*39+"px";
   toggleNav.click(function(){
       if(nav[0].style.height==navH)
         nav[0].style.height=0;
-      else 
+      else
         nav[0].style.height=navH;
       nav.toggleClass('show');
   });
@@ -208,17 +183,9 @@ window.onload=(function(){
         }else{
           $('.sidebar-inner')[0].style.cssText="";
         }
-         dirs.map(function(e,i){
-          if(window.scrollY>e.offsetTop){
-            dirA.map(function(e){ 
-              removeClass(e,'active');
-            }) 
-            addClass(dirA[i],'active'); 
-          }
-        })
       }
 
-     
+
   }
   var isScroll=false;
    backTop.click(function(){
@@ -236,5 +203,75 @@ window.onload=(function(){
      }
    });
 
+
+
+
+(function(){
+    var
+    args = arguments,
+    list = $(args[1]),
+    init = function(){
+        var dirs = getDir();
+        show(dirs, $(args[0])[0]);
+    },
+    getDir = function(){
+        var length = list.length - 1,
+             i = length,
+             dirs = [],
+             e;
+        for (; i >= 0; i--) {
+            e = list[i];
+            e.id  = e.innerHTML;
+            dirs [i] = [];
+            $(args[1] + '[id="' + e.innerHTML + '"]~' + args[2]).map(function(e){
+                if(i != length && dirs [i + 1].lastIndexOf(e.innerHTML) != -1) return ;
+                e.id = e.innerHTML;
+                dirs [i].push(e.innerHTML);
+            })
+        }
+        return dirs;
+    },
+   show = function(dirs, dirsPanel){
+        var parents = createElement('ol');
+        dirsPanel.appendChild(parents);
+        dirs.map(function(v,i){
+            var name, className;
+            if(typeof v == "object"){
+                name = list[i].innerHTML;
+                className = 'level-1';
+            }else {
+                name = v;
+                className = 'level-2';
+            }
+            var child = createElement('li',{'class' : className});
+                 childA = createElement('a', {'href' : '#' + name});
+            childA.innerHTML = name;
+            child.appendChild(childA);
+            parents.appendChild(child);
+            if(typeof v == "object"){
+                show(v, child);
+            }
+        })
+    },
+    createElement = function(tagName, attr) {
+        var a = document.createElement(tagName);
+        if(typeof attr !== "undefined"){
+            for(var i in attr){
+                a.setAttribute(i,attr[i]);
+            }
+        }
+        return a;
+  　};
+    return {
+        init: init
+    }
+})('.sidebar-inner .post-dir','article h2','h3').init();
+
+$('.level-1').click(function(){
+    $('.level-2').removeClass('show');
+    [].map.call(this.childNodes[1].childNodes,function(v){
+        addClass(v,'show');
+    })
+})
 
 })();
