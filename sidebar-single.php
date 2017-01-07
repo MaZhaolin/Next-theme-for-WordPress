@@ -7,11 +7,9 @@
     }
     .sidebar-inner .info{
         background: #fff;
-        opacity: 0;
-        -webkit-transition: all .3s;
-        -o-transition: all .3s;
-        transition: all .3s;
+        display: none;
         padding: 20px;
+        padding-top: 0
     }
     .sidebar-inner .tabs{
         text-align: center;
@@ -33,10 +31,7 @@
         box-sizing: border-box;
         width: 240px;
         background: #fff;
-        opacity: 1;
-        -webkit-transition: all .3s;
-        -o-transition: all .3s;
-        transition: all .3s;
+        padding-top: 0
     }
     .sidebar-inner .post-dir ol{
         padding-left: 2em;
@@ -44,19 +39,11 @@
     .sidebar-inner .post-dir .level-2{
         display: none;
     }
-    .sidebar-inner .post-dir .active li{
-        display: list-item;
-    }
-    .sidebar-inner .post-dir a{
-        display:block;
-    }
     .sidebar-inner .post-dir .active{
-        list-style: red;
-    }
-    .sidebar-inner .post-dir .active > a{
         color: #fc6423;
     }
     .sidebar-inner .post-dir a:hover{
+        color: #fc6423;
         text-decoration:underline
     }
 </style>
@@ -112,5 +99,6 @@
 
 
 </div>
+
 
 

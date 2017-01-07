@@ -68,4 +68,6 @@ var duoshuoQuery = {short_name:"<?php echo get_option('next_duoshuo_shortname');
 <div id="backTop" class="hide">
 	<i class="fa fa-arrow-up"></i>
 </div>
+
+
 <?php get_footer() ?>

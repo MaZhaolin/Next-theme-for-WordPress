@@ -10,7 +10,10 @@
 <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
 < ![endif]-->
 <script src="//cdn.bootcss.com/highlight.js/9.9.0/highlight.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-catalog.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 	<?php wp_footer(); ?>
 </body>
 </html>
+
