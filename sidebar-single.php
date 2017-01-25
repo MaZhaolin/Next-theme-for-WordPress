@@ -80,7 +80,7 @@
             </ul>
         </div>
         <div class="rss">
-            <a href="<?php bloginfo('rss2_url'); ?> :"><i class="fa fa-fw fa-rss"></i>RSS</a>
+            <a href="<?php bloginfo('rss2_url'); ?>"><i class="fa fa-fw fa-rss"></i>RSS</a>
         </div>
         <?php  ?>
         <?php if(wp_get_nav_menu_items('social')) : echo wp_nav_menu(array('menu'=>'social')); endif;?>

@@ -26,7 +26,7 @@
 			</ul>
 		</div>
 		<div class="rss">
-			<a href="<?php bloginfo('rss2_url'); ?> :"><i class="fa fa-fw fa-rss"></i>RSS</a>
+			<a href="<?php bloginfo('rss2_url'); ?>"><i class="fa fa-fw fa-rss"></i>RSS</a>
 		</div>
 		<?php  ?>
 		<?php wp_nav_menu(array('theme_location' => 'social')); ?>
