@@ -1,18 +1,20 @@
 <div class="sidebar">
-	<div class="title">
-		<a href="<?php bloginfo('url'); ?>"><h1 class="fadeInDown animated"><?php bloginfo('name'); ?></h1></a>
-		<div class="toggle-nav">
-			<button type="">
-				<span class="btn-bar"></span>
-				<span class="btn-bar"></span>
-				<span class="btn-bar"></span>
-			</button>
+	<div class="mist-top">
+		<div class="title">
+			<a href="<?php bloginfo('url'); ?>"><h1 class="fadeInDown animated"><?php bloginfo('name'); ?></h1></a>
+			<div class="toggle-nav">
+				<button type="">
+					<span class="btn-bar"></span>
+					<span class="btn-bar"></span>
+					<span class="btn-bar"></span>
+				</button>
+			</div>
 		</div>
+		<nav>
+		<?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+		</nav>
 	</div>
-	<nav>
-	<?php wp_nav_menu(array('theme_location' => 'primary')); ?>
-	</nav>
-
+	
 	<div class="sidebar-inner ">
 		<div class="avatar text-center">
 			<img src="<?php echo get_option('next_avator'); ?>" alt="">

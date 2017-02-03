@@ -26,7 +26,7 @@
     }
     .sidebar-inner .post-dir{
         position: absolute;
-        top:70px;
+        top: 70px;
         padding: 1em;
         box-sizing: border-box;
         width: 240px;
@@ -46,21 +46,26 @@
         color: #fc6423;
         text-decoration:underline
     }
+    #sidebar-toggle .item{
+        background: #87daff
+    }
 </style>
 <div class="sidebar">
-    <div class="title">
-        <a href="<?php bloginfo('url'); ?>"><h1 class="fadeInDown animated"><?php bloginfo('name'); ?></h1></a>
-        <div class="toggle-nav">
-            <button type="">
-                <span class="btn-bar"></span>
-                <span class="btn-bar"></span>
-                <span class="btn-bar"></span>
-            </button>
+    <div class="mist-top">
+        <div class="title">
+            <a href="<?php bloginfo('url'); ?>"><h1 class="fadeInDown animated"><?php bloginfo('name'); ?></h1></a>
+            <div class="toggle-nav">
+                <button type="">
+                    <span class="btn-bar"></span>
+                    <span class="btn-bar"></span>
+                    <span class="btn-bar"></span>
+                </button>
+            </div>
         </div>
+        <nav>
+        <?php echo wp_nav_menu(array('menu'=>'menu')); ?>
+        </nav>
     </div>
-    <nav>
-    <?php echo wp_nav_menu(array('menu'=>'menu')); ?>
-    </nav>
 
     <div class="sidebar-inner ">
         <div class="tabs">

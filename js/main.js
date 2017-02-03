@@ -25,6 +25,10 @@ window.onload=(function(){
     })
 
     $('article .content').catalog({'box':'.post-dir'})
+
+    setTimeout(function(){
+      toggleSidebar()
+    },1000)
   }
 
 
@@ -92,4 +96,12 @@ window.onload=(function(){
             scrollTop: 0
         });
    });
+
+   function toggleSidebar(){
+      $('#sidebar-toggle').toggleClass('active');
+      $('.sidebar .sidebar-inner').toggleClass('active')
+      $('.main').toggleClass('active')
+   }
+
+   $('#sidebar-toggle').click(toggleSidebar)
 })

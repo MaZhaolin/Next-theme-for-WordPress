@@ -1,7 +1,7 @@
 <?php add_action('admin_menu', 'next_page');
 function next_page (){
     if ( count($_POST) > 0 && isset($_POST['next_settings']) ){
-        $options = array ('author','avator','site_time','duoshuo_shortname');
+        $options = array ('author','avator','site_time','duoshuo_shortname','scheme');
         foreach ( $options as $opt ){
             delete_option ( 'next_'.$opt, $_POST[$opt] );
             add_option ( 'next_'.$opt, $_POST[$opt] );
@@ -55,6 +55,17 @@ input[type=submit]:hover{
     <div class="form-group">
       <label for="">底部时间设置:</label>
       <input name="site_time" id="site_time" type="text" name="" value="<?php echo get_option('next_site_time'); ?>">
+    </div>
+    <div class="form-group">
+      <label for="">主题方案:</label>
+      <select name="scheme" id="">
+        <option value="Muse" <?php if(get_option('next_scheme') == 'Muse'){ ?> selected="selected"<?php 
+        } ?>>Muse</option>
+        <option value="Mist" <?php if(get_option('next_scheme') == 'Mist'){ ?> selected="selected" <?php 
+        } ?>>Mist</option>
+        <option value="Pisces" <?php if(get_option('next_scheme') == 'Pisces'){ ?> selected="selected" <?php 
+        } ?>>Pisces</option>
+      </select>
     </div>
     </fieldset>
     <p>

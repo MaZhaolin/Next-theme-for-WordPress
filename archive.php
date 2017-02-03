@@ -28,6 +28,13 @@
     </div>
 </div>
 </div>
+<div id="sidebar-toggle">
+    <div class="sidebar-toggle-wrap">
+        <span class="item item-top"></span>
+        <span class="item item-middle"></span>
+        <span class="item item-bottom"></span>
+    </div>
+</div>
 <div id="backTop" class="hide">
     <i class="fa fa-arrow-up"></i>
 </div>

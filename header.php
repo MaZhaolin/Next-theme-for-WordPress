@@ -6,6 +6,9 @@
     <link href="//cdn.bootcss.com/highlight.js/9.9.0/styles/tomorrow.min.css" rel="stylesheet">
 	<link href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css" rel="stylesheet">
 	<?php wp_head(); ?>
+	<?php if(get_option('next_scheme') == 'Mist'){ ?>
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style-mist.css">
+	<?php } ?>
 </head>
 <body <?php body_class(); ?>>
 
