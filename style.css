@@ -650,8 +650,9 @@ footer{
     margin: 0 auto;
 	color: #999;
 }
-footer .fa{
-	color: #999
+footer .fa-heart{
+	color: #999;
+	padding: 0 5px;
 }
 footer a{
 	color: #555;
