@@ -294,8 +294,63 @@ footer div{
 	color: #666
 }
 
-@media (max-width: 1600px){
+@media (min-width: 991px and max-width: 1600px){
 	.sidebar .mist-top,.container,footer div{
 		width:700px;
 	}
+}
+@media (max-width: 991px){
+	#sidebar-toggle{
+		display: none;
+	}
+	.container{
+		width: 100%;
+		padding: 20px;
+	}
+	.sidebar nav{
+		float: left;
+		transition: all .3s ease-out;
+		height: 0;
+		padding: 0;
+		box-sizing: border-box;
+		overflow: hidden;
+		padding: 0 !important;
+	}
+	.sidebar nav li{
+		display: block;
+	}
+	.sidebar nav.show{
+		padding: 1em 0
+	}
+	.toggle-nav{
+		left: inherit;
+		right: 14px
+	}
+	.sidebar .title{
+		display: block;
+		text-align: left;
+	}
+	.sidebar .title h1{
+		left: 5%;
+		font-weight: 600
+	}
+	.sidebar .title:before,.sidebar .title:after{
+		display: none;
+	}
+	.toggle-nav .btn-bar{
+		background: #222
+	}
+	article .title,article .read-more{
+		text-align: center;
+	}
+	article .title h1{
+		font-size: 20px
+	}
+	article .content{
+		font-size: 15px
+	}
+	footer{
+		text-align: center;
+	}
+
 }
