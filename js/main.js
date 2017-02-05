@@ -1,8 +1,8 @@
 window.onload=(function(){
-  // var viewer = new Viewer($('.container')[0]);
   $("img").lazyload({
       effect:"fadeIn"
   });
+  $("a.fancybox").fancybox();   
   var backTop = $('#backTop');
   var toggleNav = $('.toggle-nav');
   var nav = $('nav');
