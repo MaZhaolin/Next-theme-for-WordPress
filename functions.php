@@ -386,3 +386,12 @@ register_uninstall_hook( __FILE__, array( 'FontAwesomeFour', 'register_uninstall
  }
  clear_zal_cache();
  add_action('save_post', 'clear_zal_cache'); // 新发表文章/修改文章时
+
+add_filter ('the_content', 'lazyload');
+function lazyload($content) {
+    $loadimg_url=get_bloginfo('template_directory').'/img/loading.gif';
+    if(!is_feed()||!is_robots) {
+        $content=preg_replace('/<img(.+)src=[\'"]([^\'"]+)[\'"](.*)>/i',"<img\$1data-original=\"\$2\" >\n<noscript>\$0</noscript>",$content);
+    }
+    return $content;
+}

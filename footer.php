@@ -11,6 +11,8 @@
 < ![endif]-->
 <script src="//cdn.bootcss.com/highlight.js/9.9.0/highlight.min.js"></script>
 <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+<script src="//cdn.bootcss.com/viewerjs/0.6.0/viewer.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-catalog.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 	<?php wp_footer(); ?>

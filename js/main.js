@@ -1,5 +1,8 @@
 window.onload=(function(){
-
+  // var viewer = new Viewer($('.container')[0]);
+  $("img").lazyload({
+      effect:"fadeIn"
+  });
   var backTop = $('#backTop');
   var toggleNav = $('.toggle-nav');
   var nav = $('nav');
@@ -25,10 +28,11 @@ window.onload=(function(){
     })
 
     $('article .content').catalog({'box':'.post-dir'})
-
-    setTimeout(function(){
-      toggleSidebar()
-    },1000)
+    if (!navigator.userAgent.match(/mobile/i)) {
+      setTimeout(function(){
+        toggleSidebar()
+      },1000)
+    }
   }
 
 
