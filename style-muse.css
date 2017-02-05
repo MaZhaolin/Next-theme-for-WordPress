@@ -260,6 +260,9 @@ footer div{
 	#sidebar-toggle{
 		display: none;
 	}
+	.main.active .sidebar .mist-top, .main.active .container, .main.active ~ footer{
+		transform: translate(0);
+	}
 	.container{
 		width: 100%;
 		padding: 20px;

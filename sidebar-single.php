@@ -5,6 +5,10 @@
         background: transparent;
         padding: 0;
     }
+    .sidebar-inner.active *{
+        -webkit-animation-name: none;
+        animation-name: none;
+    }
     .sidebar-inner .info{
         background: #fff;
         display: none;
