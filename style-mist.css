@@ -24,6 +24,26 @@ header{
 		transform: scale3d(100%,0,0);
 	}
 }
+@keyframes slideR{
+	from{
+		opacity: 0;
+		transform: translateX(15px);
+	}
+	to{
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@-webkit-keyframes slideR{
+	from{
+		opacity: 0;
+		transform: translateX(15px);
+	}
+	to{
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
 .main{
 	max-width: 100%;
 }
@@ -113,7 +133,7 @@ header{
 	color: #87daff !important
 }
 .sidebar .sidebar-inner a:hover, .sidebar .sidebar-inner a:hover *{
-	color: #ccc !important
+	color: #ccc 
 }
 .sidebar-inner .avatar .author{
 	color: #f5f5f5
@@ -127,11 +147,30 @@ header{
 .sidebar .sidebar-inner *{
 	color: #999;
 }
+.sidebar-inner .tab {
+	-webkit-animation-delay: .1s;
+	-o-animation-delay: .1s;
+	animation-delay: .1s;
+}
+.sidebar-inner .rss {
+	-webkit-animation-delay: .2s;
+	-o-animation-delay: .2s;
+	animation-delay: .2s;
+}
+.sidebar-inner .menu-social-container {
+	-webkit-animation-delay: .3s;
+	-o-animation-delay: .3s;
+	animation-delay: .3s;
+}
+.sidebar-inner .friend-link {
+	-webkit-animation-delay: .4s;
+	-o-animation-delay: .4s;
+	animation-delay: .4s;
+}
 .sidebar .sidebar-inner .tab a:hover *{
 	color: #eee !important;
 	cursor: pointer;
 }
-
 .sidebar-inner .rss{
 	padding: 20px;
 	border: none;
@@ -150,15 +189,33 @@ header{
 	color: #fff
 }.sidebar-inner .rss a:hover .fa{
 	color: #fff
+}.sidebar-inner.active *{
+	-webkit-animation-name: slideR;
+	animation-name: slideR;
+	-webkit-animation-duration: .5s;
+	animation-duration: .5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
 }
 .menu-social-container,.sidebar-inner  .friend-link{
 	border: none;
 	text-align: center;
 }.menu-social-container li{
 	width: auto;
-	padding:5px;
+	margin:5px;
+	border-bottom: 1px solid #555
 }.friend-link li{
 	margin: 5px
+}
+.menu-social-container li:before{
+	display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+    content: " ";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgb(170, 105, 185);
 }
 #backTop{
 	background: #222;
@@ -198,13 +255,13 @@ header{
 }
 #sidebar-toggle.active .item-top{
 	transform: rotateZ(-45deg);
-	right: 5px;
+	right: 4px;
 }
 #sidebar-toggle.active .item-middle{
 	opacity: 0
 }
 #sidebar-toggle.active .item-bottom{
-	right: 5px;
+	right: 4px;
 	transform: rotateZ(45deg);
 }
 .container{
