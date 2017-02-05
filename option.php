@@ -59,12 +59,12 @@ input[type=submit]:hover{
     <div class="form-group">
       <label for="">主题方案:</label>
       <select name="scheme" id="">
+        <option value="Pisces" <?php if(get_option('next_scheme') == 'Pisces'){ ?> selected="selected" <?php 
+          } ?>>Pisces</option>
         <option value="Muse" <?php if(get_option('next_scheme') == 'Muse'){ ?> selected="selected"<?php 
         } ?>>Muse</option>
         <option value="Mist" <?php if(get_option('next_scheme') == 'Mist'){ ?> selected="selected" <?php 
         } ?>>Mist</option>
-        <option value="Pisces" <?php if(get_option('next_scheme') == 'Pisces'){ ?> selected="selected" <?php 
-        } ?>>Pisces</option>
       </select>
     </div>
     </fieldset>

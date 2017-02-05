@@ -9,6 +9,9 @@
 	<?php if(get_option('next_scheme') == 'Mist'){ ?>
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style-mist.css">
 	<?php } ?>
+	<?php if(get_option('next_scheme') == 'Muse'){ ?>
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style-muse.css">
+	<?php } ?>
 </head>
 <body <?php body_class(); ?>>
 
