@@ -174,6 +174,7 @@ header{
 
 .container img{
 	width:95% ;
+	height: auto
 }
 .sidebar{
 	float: left;
@@ -659,80 +660,187 @@ footer a{
 }
 
 /*多说*/
-#ds-thread{
-	margin-top: 2em;
+.container #ds-thread #ds-reset {
+  color: #555;
 }
-.container #ds-thread #ds-reset a.ds-like-thread-button{
-	background: #fff ;
-    box-shadow: none ;
-    text-shadow: none ;
-    border: 1px solid #989898 ;
-    border-radius: 0 ;
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
-    outline: none;
+.container #ds-thread #ds-reset .ds-replybox {
+  margin-bottom: 30px;
 }
-.container #ds-thread #ds-reset a.ds-like-thread-button:hover span{
-	color: #fff;
+.container #ds-thread #ds-reset .ds-replybox .ds-avatar,
+.container #ds-reset .ds-avatar img {
+  box-shadow: none;
 }
-.container #ds-thread #ds-reset a.ds-like-thread-button:hover,.container #ds-thread #ds-reset li.ds-tab a.ds-current:hover{
-	color: #fff ;
-	background: #555 ;
-	font-weight: normal;
-	text-shadow: none;
+.container #ds-thread #ds-reset .ds-textarea-wrapper {
+  border-color: #c7d4e1;
+  background: none;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
 }
-.container #ds-thread #ds-reset li.ds-tab a.ds-current{
-	border:1px solid #989898;
-	color: #555;
-	border-radius: 0;
-	background: #fff;
-	padding: 0.3em 0.7em;
+.container #ds-thread #ds-reset .ds-textarea-wrapper textarea {
+  height: 60px;
 }
-.container #ds-thread #ds-reset .ds-post-options{
-	background: #fff;
-	border-radius: 0;
+.container #ds-reset .ds-rounded-top {
+  border-radius: 0;
 }
-.container #ds-thread #ds-reset .ds-post-button{
-	background: #fff;
-	border-radius: 0;
-	text-shadow: none;
-	font-weight: 100;
-	outline: none;
-	-webkit-transition: all .3s;
-	-o-transition: all .3s;
-	transition: all .3s;
+.container #ds-thread #ds-reset .ds-post-toolbar {
+  box-sizing: border-box;
+  border: 1px solid #c7d4e1;
+  background: #f6f8fa;
 }
-.container #ds-thread #ds-reset .ds-post-button:hover{
-	background: #555;
-	font-weight: 100;
-	color: #fff
+.container #ds-thread #ds-reset .ds-post-options {
+  height: 40px;
+  border: none;
+  background: none;
 }
-.container #ds-thread #ds-reset .ds-textarea-wrapper textarea, #ds-thread #ds-reset .ds-textarea-wrapper .ds-hidden-text{
-	box-shadow: none;
-    background: #fff;
-    border-radius: 0;
+.container #ds-thread #ds-reset .ds-toolbar-buttons {
+  top: 11px;
 }
-.container #ds-thread #ds-reset .ds-textarea-wrapper{
-	border-radius: 0
+.container #ds-thread #ds-reset .ds-sync {
+  top: 5px;
 }
-.container #ds-thread #ds-reset .ds-replybox .ds-avatar img, .container #ds-reset .ds-avatar img{
-	    border: 1px solid #555;
-    border-radius: 50%;
-    -webkit-transition: all .3s ;
-    -o-transition: all .3s ;
-    transition: all .3s ;
+.container #ds-thread #ds-reset .ds-post-button {
+  top: 4px;
+  right: 5px;
+  width: 90px;
+  height: 30px;
+  border: 1px solid #c5ced7;
+  border-radius: 3px;
+  background-image: linear-gradient(#fbfbfc, #f5f7f9);
+  color: #60676d;
 }
-.container #ds-thread #ds-reset .ds-replybox .ds-avatar img:hover, .container #ds-reset  .ds-post-self:hover img{
-	-webkit-transform: rotate(360deg);
-	   -moz-transform: rotate(360deg);
-	    -ms-transform: rotate(360deg);
-	     -o-transform: rotate(360deg);
-	        transform: rotate(360deg);
+.container #ds-thread #ds-reset .ds-post-button:hover {
+  background-position: 0 -30px;
+  color: #60676d;
 }
-.container #ds-reset div, #ds-related-reads div, #ds-reset ul, #ds-related-reads ul, #ds-reset ol, #ds-related-reads ol, #ds-reset li, #ds-related-reads li, #ds-reset ul li, #ds-related-reads ul li, #ds-reset ol li, #ds-related-reads ol li, #ds-reset iframe, #ds-related-reads iframe, #ds-reset h1, #ds-related-reads h1, #ds-reset h2, #ds-related-reads h2, #ds-reset h3, #ds-related-reads h3, #ds-reset h4, #ds-related-reads h4, #ds-reset h5, #ds-related-reads h5, #ds-reset h6, #ds-related-reads h6, #ds-reset p, #ds-related-reads p, #ds-reset img, #ds-related-reads img, #ds-reset blockquote, #ds-related-reads blockquote, #ds-reset a, #ds-related-reads a, #ds-reset span, #ds-related-reads span, #ds-reset pre, #ds-related-reads pre, #ds-reset code, #ds-related-reads code, #ds-reset strong, #ds-related-reads strong, #ds-reset sub, #ds-related-reads sub, #ds-reset sup, #ds-related-reads sup, #ds-reset fieldset, #ds-related-reads fieldset, #ds-reset form, #ds-related-reads form, #ds-reset label, #ds-related-reads label, #ds-reset input, #ds-related-reads input, #ds-reset textarea, #ds-related-reads textarea, #ds-reset header, #ds-related-reads header, #ds-reset section, #ds-related-reads section, #ds-reset article, #ds-related-reads article, #ds-reset select, #ds-related-reads select{
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-weight: 300
+.container #ds-thread #ds-reset .ds-comments-info {
+  padding: 10px 0;
+}
+.container #ds-thread #ds-reset .ds-sort {
+  display: none;
+}
+.container #ds-thread #ds-reset li.ds-tab a.ds-current {
+  border: none;
+  background: #f6f8fa;
+  color: #60676d;
+}
+.container #ds-thread #ds-reset li.ds-tab a.ds-current:hover {
+  background-color: #e9f0f7;
+  color: #60676d;
+}
+.container #ds-thread #ds-reset li.ds-tab a {
+  border-radius: 2px;
+  padding: 5px;
+}
+.container #ds-thread #ds-reset .ds-login-buttons p {
+  color: #999;
+  line-height: 36px;
+}
+.container #ds-thread #ds-reset .ds-login-buttons .ds-service-list li {
+  height: 28px;
+}
+.container #ds-thread #ds-reset .ds-service-list a {
+  background: none;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 3px;
+  text-align: center;
+}
+.container #ds-thread #ds-reset .ds-service-list a:hover {
+  color: #fff;
+  background: #666;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-weibo {
+  color: #fc9b00;
+  border-color: #fc9b00;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-weibo:hover {
+  background: #fc9b00;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-qq {
+  color: #60a3ec;
+  border-color: #60a3ec;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-qq:hover {
+  background: #60a3ec;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-renren {
+  color: #2e7ac4;
+  border-color: #2e7ac4;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-renren:hover {
+  background: #2e7ac4;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-douban {
+  color: #37994c;
+  border-color: #37994c;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-douban:hover {
+  background: #37994c;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-kaixin {
+  color: #fef20d;
+  border-color: #fef20d;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-kaixin:hover {
+  background: #fef20d;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-netease {
+  color: #f00;
+  border-color: #f00;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-netease:hover {
+  background: #f00;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-sohu {
+  color: #ffcb05;
+  border-color: #ffcb05;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-sohu:hover {
+  background: #ffcb05;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-baidu {
+  color: #2831e0;
+  border-color: #2831e0;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-baidu:hover {
+  background: #2831e0;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-google {
+  color: #166bec;
+  border-color: #166bec;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-google:hover {
+  background: #166bec;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-weixin {
+  color: #00ce0d;
+  border-color: #00ce0d;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-weixin:hover {
+  background: #00ce0d;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-more-services {
+  border: none;
+}
+.container #ds-thread #ds-reset .ds-service-list .ds-more-services:hover {
+  background: none;
+}
+.container #ds-reset .duoshuo-ua-admin {
+  display: inline-block;
+  color: #f00;
+}
+.container #ds-reset .duoshuo-ua-platform,
+.container #ds-reset .duoshuo-ua-browser {
+  color: #ccc;
+}
+.container #ds-reset .duoshuo-ua-platform .fa,
+.container #ds-reset .duoshuo-ua-browser .fa {
+  display: inline-block;
+  margin-right: 3px;
+}
+.container #ds-reset .duoshuo-ua-separator {
+  display: inline-block;
+  margin-left: 5px;
 }
 @media (max-width: 991px){
 	.toggle-nav {
@@ -766,3 +874,4 @@ footer a{
 		padding:30px 0;
 	}
 }
+

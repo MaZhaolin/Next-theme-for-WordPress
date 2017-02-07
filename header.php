@@ -10,10 +10,10 @@
     <link href="//cdn.bootcss.com/viewerjs/0.6.0/viewer.min.css" rel="stylesheet">
 	<?php wp_head(); ?>
 	<?php if(get_option('next_scheme') == 'Mist'){ ?>
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style-mist.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/static/css/style-mist.css">
 	<?php } ?>
 	<?php if(get_option('next_scheme') == 'Muse'){ ?>
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style-muse.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/static/css/style-muse.css">
 	<?php } ?>
 </head>
 <body <?php body_class(); ?>>

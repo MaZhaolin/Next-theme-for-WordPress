@@ -1,5 +1,6 @@
 window.onload=(function(){
   $("img").lazyload({
+      threshold : 200,
       effect:"fadeIn"
   });
   $("a.fancybox").fancybox();   
