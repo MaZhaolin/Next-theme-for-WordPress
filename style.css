@@ -640,6 +640,35 @@ pre:before{
 	color:#eee;
 
 }
+
+/*授权*/
+.post-copyright{
+    padding: 0.5em 1em;
+    border-left: 3px solid #ff1700;
+    background-color: #f9f9f9;
+    margin-bottom: 1rem;
+}
+.post-copyright a{
+    border-bottom: 1px solid #555;
+}
+
+/*post-tags*/
+.post-tags{
+    text-align: center;
+}
+.post-tags a{
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 13px;
+    color: #555;
+    text-decoration: none;
+    border-bottom: 1px solid #999;
+    word-wrap: break-word;
+}
+.post-tags a:before{
+    content: '#';
+}
+
 /*comments*/
 .comment{
     list-style: none;

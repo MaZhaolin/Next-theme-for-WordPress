@@ -23,7 +23,25 @@
 		<?php the_content(); ?>
 	</div>
 </article>
-
+<div>
+    <ul class="post-copyright">
+        <li class="post-copyright-author">
+            <strong>本文作者：</strong>
+            <?php the_author() ?>
+        </li>
+        <li class="post-copyright-link">
+            <strong>本文链接：</strong>
+            <a href="<?php the_permalink(); ?>" title="使用 Travis CI 自动更新 GitHub Pages"><?php the_permalink(); ?></a>
+        </li>
+        <li class="post-copyright-license">
+            <strong>版权声明： </strong>
+            本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+<div class="post-tags">
+    <?php the_tags('', '') ?>
+</div>
 <div class="post-nav clearfix">
 	<div class="prev">
 		<?php  if (get_previous_post()) { previous_post_link('<i class="fa fa-chevron-left"></i> %link');} ?>
@@ -84,7 +102,7 @@
                 outline: none;
             }
             #SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .wrap-action-w .action-issue-w .issue-btn-w a button.btn-fw:after{
-                content: "发 送"
+                content: "发表评论"
             }
             #SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .wrap-action-w .action-issue-w .issue-btn-w a button.btn-fw:hover{
                 background-image: none;
