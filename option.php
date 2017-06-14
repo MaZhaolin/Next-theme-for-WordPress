@@ -1,7 +1,7 @@
 <?php add_action('admin_menu', 'next_page');
 function next_page (){
     if ( count($_POST) > 0 && isset($_POST['next_settings']) ){
-        $options = array ('author','avator','site_time','duoshuo_shortname','scheme');
+        $options = array ('author','avator','site_time','comment_type','scheme', 'sohucs_appid', 'sohucs_conf');
         foreach ( $options as $opt ){
             delete_option ( 'next_'.$opt, $_POST[$opt] );
             add_option ( 'next_'.$opt, $_POST[$opt] );
@@ -49,13 +49,26 @@ input[type=submit]:hover{
       <input name="avator" id="avator" type="text" name="" value="<?php echo get_option('next_avator'); ?>">
     </div>
     <div class="form-group">
-      <label for="">你的多说short_name:</label>
-      <input name="duoshuo_shortname" id="duoshuo_shortname" type="text" name="" value="<?php echo get_option('next_duoshuo_shortname'); ?>">
-    </div>
-    <div class="form-group">
       <label for="">底部时间设置:</label>
       <input name="site_time" id="site_time" type="text" name="" value="<?php echo get_option('next_site_time'); ?>">
     </div>
+    <div class="form-group">
+        <label for="">评论框:</label>
+        <select name="comment_type" id="">
+            <option value="default" <?php if(get_option('next_comment_type') == 'default'){ ?> selected="selected" <?php
+            } ?>>默认</option>
+            <option value="sohucs" <?php if(get_option('next_comment_type') == 'sohucs'){ ?> selected="selected"<?php
+            } ?>>畅言评论框</option>
+        </select>
+    </div>
+        <?php if(get_option('next_comment_type') == 'sohucs'){ ?>
+        <div class="form-group">
+            <label for="">畅言appid:</label>
+            <input name="sohucs_appid" id="site_time" type="text" name="" value="<?php echo get_option('next_sohucs_appid'); ?>">
+            <label for="">畅言conf:</label>
+            <input name="sohucs_conf" id="site_time" type="text" name="" value="<?php echo get_option('next_sohucs_conf'); ?>">
+        </div>
+        <?php }?>
     <div class="form-group">
       <label for="">主题方案:</label>
       <select name="scheme" id="">

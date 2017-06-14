@@ -11,8 +11,12 @@
 				<div class="tag">
 					<span class="item">发表于 <?php the_date() ?></span>
 					<span class="item"><?php the_category(‘,’) ?></span>
-					<span class="item ds-thread-count" data-thread-key="<?php the_id() ?>"></span>
-					<span class="item">阅读次数 <?php get_post_views($post -> ID); ?></span>
+                    <?php if(get_option('next_comment_type') == 'sohucs'){ ?>
+                    <span class="item"><span id = "sourceId::<?php echo $post -> ID ?>" class = "cy_cmt_count" ></span>条评论</span>
+                    <?php } else {?>
+                    <span class="item ds-thread-count"><?php echo get_post($post -> ID)->comment_count;  ?>条评论</span>
+                    <?php } ?>
+                    <span class="item">阅读次数 <?php get_post_views($post -> ID); ?></span>
 				</div>
 			</div>
 			<div class="content">
@@ -41,14 +45,6 @@
 <div id="backTop" class="hide">
 	<i class="fa fa-arrow-up"></i>
 </div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"<?php echo get_option('next_duoshuo_shortname'); ?>"};
-(function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = 'http://static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyt0HdcCq">
 </script>
 <?php get_footer() ?>

@@ -109,4 +109,14 @@ window.onload=(function(){
    }
 
    $('#sidebar-toggle').click(toggleSidebar)
+    $('.depth-8').children('.children').find('.reply').click(function(){ //class=".depth-8"子元素class=".children"下的class=".reply"的点击事件，注意：模板不同HTML结构可能不同，需调整！
+        var rid= $(this).parent().attr("id"); //取得所回复的评论id，可能需要调整！
+        var rna= $(this).next().text(); //取得所回复的评论用户名，可能需要调整！
+        $("#comment").attr("value","<a href='#"+rid+"'>@"+rna+"</a> ").focus(); //在输入框添加"@用户名"和链接
+
+    });
+
+    $('#cancel-comment-reply-link').click(function() {
+        $("#comment").attr("value",''); //点击取消回复时清空输入框
+    });
 })

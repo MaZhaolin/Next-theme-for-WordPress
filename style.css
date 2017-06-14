@@ -1,10 +1,10 @@
 /*
 Theme Name: NexT by InsertSweat
-Theme URI: http://www.cquccc.top/2016/12/next-for-wordpress-%e6%ad%a3%e5%bc%8f%e5%8f%91%e5%b8%83%e5%95%a6/
+Theme URI: http://blog.insertsweat.cn/2017/02/next-for-wordpress-3-0/
 Author: InsertSweat
-Author URI: http://www.cquccc.top
+Author URI: http://insertsweat.cn
 Description: The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small.
-Version: 3.0
+Version: 3.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
@@ -640,6 +640,113 @@ pre:before{
 	color:#eee;
 
 }
+/*comments*/
+.comment{
+    list-style: none;
+    padding: 1rem 10px;
+}
+.comment-author{
+    float: left;
+}
+.comment-author img{
+    vertical-align: middle;
+    width: 42px;
+    height: 42px;
+    border-radius: 42px;
+    border: 2px solid #e4e4e4;
+}
+.children .comment-author img{
+    width: 2rem;
+    height: 2rem;
+}
+.children .comment-body cite{
+    float: left;
+    color: #000;
+    margin-right: 10px;
+}
+.children .comment-body cite:after{
+    content: ':';
+}
+.children {
+    padding-left: 50px;
+}
+.children .comment{
+    padding: 2px 0;
+    clear: both;
+}
+.children .comment_content p{
+    float: left;
+    display: inline-block;
+    margin: 0;
+}
+.comment-body{
+    position: relative;
+}
+.comment_content .reply{
+    padding-top: 5px;
+    border-top: 1px solid #e4e4e4;
+    font-size: 12px;
+    color: #9e9e9e;
+    clear: both;
+}
+.children .comment_content .reply{
+    border-top: none;
+    padding-top: 0;
+}
+.comment_content .commentmetadata{
+    float: left;
+}
+.comment_content{
+    padding-left: 50px;
+}
+.comment_content p{
+    margin-top: 0;
+}
+.comment_content .reply a{
+    margin-left: 10px;
+}
+.comment-respond {
+    margin: 1rem 10px;
+    border-top: 1px solid #555555;
+    padding: 1rem 0;
+}
+.comment-respond label{
+    display: block;
+}
+.comment-respond textarea{
+    outline: none;
+    border: 1px solid #555;
+    width: 100%;
+    padding: 1rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.comment-respond input{
+    line-height: 2rem;
+    outline: none;
+    padding: 0 10px;
+    border: 1px solid #555;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.comments-pagination {
+    border-top: none;
+    margin-top: 0;
+}
+.form-submit .submit{
+    border: 1px solid #555;
+    background: #fff;
+    color: #555;
+    transition: .3s;
+    padding: 0 20px;
+    margin-top: 1rem;
+}
+.form-submit .submit:hover{
+    background: #555;
+    color: #fff;
+}
 /*footer*/
 footer{
 	max-width: 700px;
@@ -659,189 +766,6 @@ footer a{
 	text-decoration: underline;
 }
 
-/*多说*/
-.container #ds-thread #ds-reset {
-  color: #555;
-}
-.container #ds-thread #ds-reset .ds-replybox {
-  margin-bottom: 30px;
-}
-.container #ds-thread #ds-reset .ds-replybox .ds-avatar,
-.container #ds-reset .ds-avatar img {
-  box-shadow: none;
-}
-.container #ds-thread #ds-reset .ds-textarea-wrapper {
-  border-color: #c7d4e1;
-  background: none;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-}
-.container #ds-thread #ds-reset .ds-textarea-wrapper textarea {
-  height: 60px;
-}
-.container #ds-reset .ds-rounded-top {
-  border-radius: 0;
-}
-.container #ds-thread #ds-reset .ds-post-toolbar {
-  box-sizing: border-box;
-  border: 1px solid #c7d4e1;
-  background: #f6f8fa;
-}
-.container #ds-thread #ds-reset .ds-post-options {
-  height: 40px;
-  border: none;
-  background: none;
-}
-.container #ds-thread #ds-reset .ds-toolbar-buttons {
-  top: 11px;
-}
-.container #ds-thread #ds-reset .ds-sync {
-  top: 5px;
-}
-.container #ds-thread #ds-reset .ds-post-button {
-  top: 4px;
-  right: 5px;
-  width: 90px;
-  height: 30px;
-  border: 1px solid #c5ced7;
-  border-radius: 3px;
-  background-image: linear-gradient(#fbfbfc, #f5f7f9);
-  color: #60676d;
-}
-.container #ds-thread #ds-reset .ds-post-button:hover {
-  background-position: 0 -30px;
-  color: #60676d;
-}
-.container #ds-thread #ds-reset .ds-comments-info {
-  padding: 10px 0;
-}
-.container #ds-thread #ds-reset .ds-sort {
-  display: none;
-}
-.container #ds-thread #ds-reset li.ds-tab a.ds-current {
-  border: none;
-  background: #f6f8fa;
-  color: #60676d;
-}
-.container #ds-thread #ds-reset li.ds-tab a.ds-current:hover {
-  background-color: #e9f0f7;
-  color: #60676d;
-}
-.container #ds-thread #ds-reset li.ds-tab a {
-  border-radius: 2px;
-  padding: 5px;
-}
-.container #ds-thread #ds-reset .ds-login-buttons p {
-  color: #999;
-  line-height: 36px;
-}
-.container #ds-thread #ds-reset .ds-login-buttons .ds-service-list li {
-  height: 28px;
-}
-.container #ds-thread #ds-reset .ds-service-list a {
-  background: none;
-  padding: 5px;
-  border: 1px solid;
-  border-radius: 3px;
-  text-align: center;
-}
-.container #ds-thread #ds-reset .ds-service-list a:hover {
-  color: #fff;
-  background: #666;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-weibo {
-  color: #fc9b00;
-  border-color: #fc9b00;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-weibo:hover {
-  background: #fc9b00;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-qq {
-  color: #60a3ec;
-  border-color: #60a3ec;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-qq:hover {
-  background: #60a3ec;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-renren {
-  color: #2e7ac4;
-  border-color: #2e7ac4;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-renren:hover {
-  background: #2e7ac4;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-douban {
-  color: #37994c;
-  border-color: #37994c;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-douban:hover {
-  background: #37994c;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-kaixin {
-  color: #fef20d;
-  border-color: #fef20d;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-kaixin:hover {
-  background: #fef20d;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-netease {
-  color: #f00;
-  border-color: #f00;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-netease:hover {
-  background: #f00;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-sohu {
-  color: #ffcb05;
-  border-color: #ffcb05;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-sohu:hover {
-  background: #ffcb05;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-baidu {
-  color: #2831e0;
-  border-color: #2831e0;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-baidu:hover {
-  background: #2831e0;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-google {
-  color: #166bec;
-  border-color: #166bec;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-google:hover {
-  background: #166bec;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-weixin {
-  color: #00ce0d;
-  border-color: #00ce0d;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-weixin:hover {
-  background: #00ce0d;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-more-services {
-  border: none;
-}
-.container #ds-thread #ds-reset .ds-service-list .ds-more-services:hover {
-  background: none;
-}
-.container #ds-reset .duoshuo-ua-admin {
-  display: inline-block;
-  color: #f00;
-}
-.container #ds-reset .duoshuo-ua-platform,
-.container #ds-reset .duoshuo-ua-browser {
-  color: #ccc;
-}
-.container #ds-reset .duoshuo-ua-platform .fa,
-.container #ds-reset .duoshuo-ua-browser .fa {
-  display: inline-block;
-  margin-right: 3px;
-}
-.container #ds-reset .duoshuo-ua-separator {
-  display: inline-block;
-  margin-left: 5px;
-}
 @media (max-width: 991px){
 	.toggle-nav {
 		display: block
@@ -873,5 +797,12 @@ footer a{
 		width: 100%;
 		padding:30px 0;
 	}
+    .comment-respond input{
+        width: 100%;
+    }
+    .form-submit .submit{
+        background: #000;
+        color: #fff;
+    }
 }
 
