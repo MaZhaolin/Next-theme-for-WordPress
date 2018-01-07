@@ -464,8 +464,8 @@ pre{
 	padding-left:40px;
 	overflow-y:hidden;
 }
-pre:before{
-	content:"1\A 2\A 3\A 4\A 6\A 7\A 8\A 9\A 10\A 11\A 12\A 13\A 14\A 15\A 16\A 17\A 18\A 19\A 20\A 21\A 22\A 23\A 24\A 25\A 26\A 27\A 28\A 29\A 30";
+pre:before{	
+	content:"1\A 2\A 3\A 4\A 6\A 7\A 8\A 9\A 10\A 11\A 12\A 13\A 14\A 15\A 16\A 17\A 18\A 19\A 20\A 21\A 22\A 23\A 24\A 25\A 26\A 27\A 28\A 29\A 30\A 31\A 32\A 33\A 34\A 36\A 37\A 38\A 39\A 40\A 41\A 42\A 43\A 44\A 46\A 47\A 48\A 49\A 50\A 51\A 52\A 53\A 54\A 56\A 57\A 58\A 59\A 60\A 61\A 62\A 63\A 64\A 66\A 67\A 68\A 69\A 70\A 81\A 82\A 83\A 84\A 86\A 87\A 88\A 89\A 90\A 91\A 92\A 93\A 94\A 96\A 97\A 98\A 99\A 100\A 101\A 102\A 103\A 104\A 106\A 107\A 108\A 109\A 110\A";
 	display: inline-block;
 	text-align: right;
 	position: absolute;
@@ -647,6 +647,7 @@ pre:before{
     border-left: 3px solid #ff1700;
     background-color: #f9f9f9;
     margin-bottom: 1rem;
+	word-break: break-all
 }
 .post-copyright a{
     border-bottom: 1px solid #555;
@@ -826,6 +827,16 @@ footer a{
 		width: 100%;
 		padding:30px 0;
 	}
+}
+
+@media (max-width: 560px) {
+    .comment{
+        padding: 1rem 0;
+    }
+    .children{
+        padding-left: 0;
+    }
+
     .comment-respond input{
         width: 100%;
     }
@@ -834,4 +845,3 @@ footer a{
         color: #fff;
     }
 }
-

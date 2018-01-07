@@ -82,6 +82,7 @@ window.onload=(function(){
   });
 
   function windowScroll() {
+    var h = document.body.scrollHeight - document.body.clientHeight;
     if(window.scrollY>800)
         backTop.removeClass('hide');
       else backTop.addClass('hide');

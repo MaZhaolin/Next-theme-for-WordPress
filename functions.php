@@ -220,7 +220,7 @@ class FontAwesomeFour {
                                             <legend class="screen-reader-text"><span>Load Font Awesome 4 From</span></legend>
                                             <label for="n9m_location-local"><input type="radio" name="n9m_location" id="n9m_location-local" value="local"' . ( 'local' == $settings[ 'stylesheet' ] ? ' checked' : false ) . '> Local plugin folder (default)</label>
                                             <br />
-                                            <label for="n9m_location-maxcdn"><input type="radio" name="n9m_location" id="n9m_location-maxcdn" value="maxcdn"' . ( 'maxcdn' == $settings[ 'stylesheet' ] ? ' checked' : false ) . '> Official Font Awesome CDN <span class="description">(<a href="https://www.bootstrapcdn.com/fontawesome/" target="_blank">Font Awesome CDN powered by MaxCDN</a>)</span></label>
+                                            <label for="n9m_location-maxcdn"><input type="radio" name="n9m_location" id="n9m_location-maxcdn" value="maxcdn"' . ( 'maxcdn' == $settings[ 'stylesheet' ] ? ' checked' : false ) . '> bootcss Font Awesome CDN <span class="description">(<a href="http://www.bootcdn.cn/font-awesome/" target="_blank">Font Awesome CDN powered by bootCDN</a>)</span></label>
                                             <br />
                                             <label for="n9m_location-other"><input type="radio" name="n9m_location" id="n9m_location-other" value="other"' . ( 'other' == $settings[ 'stylesheet' ] ? ' checked' : false ) . '> A custom location:</label> <input type="text" name="n9m_location-other-location" id="n9m_location-other-location" placeholder="Enter full url here" class="regular-text" value="' . ( isset( $settings[ 'stylesheet_location' ] ) ? $settings[ 'stylesheet_location' ] : '' ) . '">
                                             <br />
@@ -350,7 +350,7 @@ class FontAwesomeFour {
         $settings = get_option( 'n9m-font-awesome-4-menus', self::$defaults );
         switch( $settings[ 'stylesheet' ] ){
             case 'local':
-                wp_register_style( 'font-awesome-four', plugins_url( 'css/font-awesome.min.css', __FILE__ ), array(), self::$defaults[ 'version' ], 'all' );
+                wp_register_style( 'font-awesome-four', get_template_directory_uri().'/static/css/font-awesome.min.css', array(), self::$defaults[ 'version' ], 'all' );
                 wp_enqueue_style( 'font-awesome-four' );
                 break;
             case 'maxcdn':
